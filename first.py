@@ -2,7 +2,7 @@ import os
 import shutil
 import getpass
 from http.server import BaseHTTPRequestHandler, HTTPServer
-PORT = 8000
+PORT = 80
 
 #Наследуем класс от basehttprequesthandler
 class MyHttpRequestHandler(BaseHTTPRequestHandler):
