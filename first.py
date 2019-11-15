@@ -27,7 +27,9 @@ class MyHttpRequestHandler(BaseHTTPRequestHandler):
         if ch == '/': break
         file_name = file_name + ch 
       url = mdir[len(file_name) + 1:] + '/' + file_name
-      shutil.copy(url, 'C:/users/' + getpass.getuser() + '/downloads/', follow_symlinks=True)   #копируем файл в загрузки                 
+      shutil.copy(url, 'C:/users/' + getpass.getuser() + '/downloads/', follow_symlinks=True)   #копируем файл в загрузки    
+    elif mdir[0:2] == "m/":  #создать папку 
+        os.mkdir(mdir[2:])                
     else:
       files = os.listdir(mdir)
       s = ''
